@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'calculater-angular';
+  result = ''
+  
+  onButtonClick(item:any){
+    this.result +=item
+    // console.log(item)
+  }
+
+  // equal
+  onButtonEqual(){
+    // eval used to return the result of the string  ,
+    // toFixed used to set the number of decimal places
+    this.result = eval(this.result).toFixed(3)
+  }
+  // Clear
+  onButtonClear (){
+    this.result = ''
+  }
 }
